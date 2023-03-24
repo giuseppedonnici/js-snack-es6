@@ -9,3 +9,54 @@ Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengo
 nomi e falli subiti e stampiamo tutto in console.
 */
 
+const teams = [
+    {
+        name: "Milan",
+        points: 0,
+        foulsSuffered: 0,
+    },
+    {
+        name: "Juventus",
+        points: 0,
+        foulsSuffered: 0,
+    },
+    {
+        name: "Inter",
+        points: 0,
+        foulsSuffered: 0,
+    },
+    {
+        name: "Napoli",
+        points: 0,
+        foulsSuffered: 0,
+    },
+    {
+        name: "Roma",
+        points: 0,
+        foulsSuffered: 0,
+    },
+];
+
+
+teams.forEach((curTeam) => {
+   curTeam.points = generateRndNumber();
+   curTeam.foulsSuffered = generateRndNumber();
+});
+
+console.log(teams);
+
+const newTeams = [];
+
+teams.forEach((curTeam) => {
+    const {name, foulsSuffered} = curTeam;
+    newTeams.push({name, foulsSuffered});
+})
+
+console.log(teams, newTeams);
+
+// FUNCTIONS
+function generateRndNumber() {
+    result = Math.floor((Math.random() * 100) + 1);
+    return result;
+}
+
