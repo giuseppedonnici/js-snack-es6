@@ -39,24 +39,25 @@ const teams = [
 
 
 teams.forEach((curTeam) => {
-   curTeam.points = generateRndNumber();
-   curTeam.foulsSuffered = generateRndNumber();
+   curTeam.points = getRndInteger(0, 40);
+   curTeam.foulsSuffered = getRndInteger(0, 100);
 });
 
 console.log(teams);
 
-const newTeams = [];
+const newTeams = teams.map((elem) => {
+    const {name, foulsSuffered} = elem;
+    return {
+        name,
+        foulsSuffered
+    }
+});
 
-teams.forEach((curTeam) => {
-    const {name, foulsSuffered} = curTeam;
-    newTeams.push({name, foulsSuffered});
-})
+console.log(newTeams);
 
-console.log(teams, newTeams);
 
 // FUNCTIONS
-function generateRndNumber() {
-    result = Math.floor((Math.random() * 100) + 1);
-    return result;
-}
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+  }
 

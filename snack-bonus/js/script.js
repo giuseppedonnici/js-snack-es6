@@ -7,3 +7,18 @@ es:
 const numbersArray = [23, 14, 6, 8, 10];
 const newArray = getSubArray(numbersArray, 1, 3) ---> [14, 6, 8]
 */
+
+const numbersArray = [23, 14, 6, 8, 10, 7, 12, 25, 69, 77, 87];
+
+const min = 2;
+const max = 5;
+
+const newArray = getSubArray(numbersArray, min, max);
+console.log(newArray);
+
+
+// FUNCTIONS
+function getSubArray(arrayToCheck, minIndex, maxIndex) {
+    return arrayToCheck.filter((elem, index) => index >= minIndex && index <= maxIndex);
+}
+
